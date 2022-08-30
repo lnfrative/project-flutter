@@ -14,7 +14,7 @@ class Stative extends StatelessWidget {
       title: 'Stative',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        primaryColor: Colors.red
+        primaryColor: const Color.fromRGBO(255, 0, 0, 1)
       ),
       initialRoute: 'preload',
       routes: {

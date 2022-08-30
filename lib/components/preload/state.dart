@@ -8,13 +8,17 @@ class PreloadState extends State<Preload> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: const [
+        children: [
           Center(
-            child: Text("Stative"),
+            child: Image.asset(
+              'images/logo.png',
+              height: 100,
+              width: 100,
+            ),
           )
         ],
       ),
-      backgroundColor: Colors.red,
+      backgroundColor: Theme.of(context).primaryColor,
     );
   }
 }
