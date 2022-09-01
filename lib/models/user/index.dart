@@ -1,6 +1,11 @@
-import 'package:stative_app/models/model.dart';
+class UserModel {
+  final int id;
+  final String email;
+  final String name;
 
-class UserModel extends Model {
-
-  UserModel() : super(table: 'user');
+  const UserModel({
+    required this.id,
+    required this.email,
+    required this.name,
+  });
 }

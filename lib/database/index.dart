@@ -10,7 +10,15 @@ class Database {
       join(path, 'stative.db'),
       version: 1,
       onCreate: (database, version) => {
-        database.execute('CREATE TABLE IF NOT EXISTS user (id INTEGER PRIMARY KEY, name TEXT, email TEXT UNIQUE)')
+        database.execute(
+          '''
+            CREATE TABLE IF NOT EXISTS user (
+              id INTEGER PRIMARY KEY,
+              email TEXT UNIQUE
+              name TEXT,
+            )
+          '''
+        )
       }
     );
 
