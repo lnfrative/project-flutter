@@ -30,7 +30,7 @@ class Stative extends StatelessWidget {
           initialRoute: 'preload',
           routes: {
             'preload': (context) => const Preload(),
-            'auth': (context) => const SafeArea(child: Text('Auth screen')),
+            'auth': (context) => const Scaffold(body: SafeArea(child: Text('Auth screen'))),
             'login': (context) => const SafeArea(child: Text('Login screen')),
             'initialData': (context) => const SafeArea(child: Text('initialData screen')),
             'home': (context) => const SafeArea(child: Text('Home screen')),

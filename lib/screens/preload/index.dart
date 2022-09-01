@@ -34,11 +34,13 @@ class PreloadState extends State<Preload> {
     await database.connect();
     final List<Map<String, dynamic>> users = await database.connector.query('user');
 
-    if (users.isEmpty) {
-
-    } else {
-
-    }
+    Future.delayed(const Duration(milliseconds: 1000), () {
+      if (users.isEmpty) {
+        Navigator.pushNamed(context, 'auth');
+      } else {
+      //  TODO: detect session from SQLite and set on redux user state.
+      }
+    });
   }
 
   Widget buildPreload(BuildContext context, PreloadModel model) {
