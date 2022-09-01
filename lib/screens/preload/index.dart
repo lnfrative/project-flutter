@@ -33,7 +33,12 @@ class PreloadState extends State<Preload> {
     final database = Database();
     await database.connect();
     final List<Map<String, dynamic>> users = await database.connector.query('user');
-  //  TODO: detect session.
+
+    if (users.isEmpty) {
+
+    } else {
+
+    }
   }
 
   Widget buildPreload(BuildContext context, PreloadModel model) {
