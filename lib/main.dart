@@ -4,7 +4,8 @@ import 'package:stative_app/store/index.dart';
 import 'package:redux/redux.dart';
 import 'package:stative_app/screens/preload/index.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(Stative());
 }
 
