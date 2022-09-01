@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:stative_app/components/index.dart';
 import 'package:stative_app/store/index.dart';
 import 'package:redux/redux.dart';
+import 'package:stative_app/screens/preload/index.dart';
 
 void main() {
   runApp(Stative());

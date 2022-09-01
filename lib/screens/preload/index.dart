@@ -1,9 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:stative_app/components/preload/index.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:stative_app/store/index.dart';
+
+class PreloadModel {
+  final bool init;
+
+  PreloadModel({
+    this.init = false
+  });
+}
+
+class Preload extends StatefulWidget {
+  const Preload({ Key? key }) : super(key: key);
+
+  @override
+  PreloadState createState() => PreloadState();
+}
 
 class PreloadState extends State<Preload> {
   @override
   Widget build(BuildContext context) {
+    return StoreConnector<AppState, PreloadModel>(
+      converter: (store) => PreloadModel(init: true),
+      builder: buildPreload,
+    );
+  }
+
+  Widget buildPreload(BuildContext context, PreloadModel model) {
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
