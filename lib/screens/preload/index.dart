@@ -3,6 +3,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:stative_app/store/index.dart';
 import 'package:stative_app/database/index.dart';
+import 'package:stative_app/models/index.dart';
 
 class PreloadModel {
   final bool init;
@@ -32,13 +33,14 @@ class PreloadState extends State<Preload> {
   void handleStoreInit(Store<AppState> store) async {
     final database = Database();
     await database.connect();
-    final List<Map<String, dynamic>> users = await database.connector.query('user');
+    final List<UserModel> users = await UserModel.getAll(database.connector);
 
     Future.delayed(const Duration(milliseconds: 1000), () {
       if (users.isEmpty) {
         Navigator.pushNamed(context, 'auth');
       } else {
       //  TODO: detect session from SQLite and set on redux user state.
+
       }
     });
   }

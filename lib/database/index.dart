@@ -14,8 +14,11 @@ class Database {
           '''
             CREATE TABLE IF NOT EXISTS user (
               id INTEGER PRIMARY KEY,
-              email TEXT UNIQUE
+              email TEXT UNIQUE NOT NULL,
               name TEXT,
+              session INTEGER NOT NULL,
+              height INTEGER,
+              weight INTEGER,
             )
           '''
         )
