@@ -1,27 +1,27 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:stative_app/store/user/index.dart';
+import 'package:stative_app/store/session/index.dart';
 
 @immutable
 class AppState {
-  final UserState user;
+  final SessionState session;
 
   const AppState({
-    this.user = const UserState()
+      required this.session
   });
 }
 
 AppState appStore(AppState state, action) {
-  UserState user = userReducer(state.user, action);
+  SessionState session = sessionReducer(state.session, action);
 
   return AppState(
-    user: user,
+    session: session,
   );
 }
 
 AppState initialState() {
   return const AppState(
-    user: UserState()
+    session: SessionState(user: null)
   );
 }
