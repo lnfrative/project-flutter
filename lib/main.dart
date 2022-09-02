@@ -3,6 +3,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:stative_app/store/index.dart';
 import 'package:redux/redux.dart';
 import 'package:stative_app/screens/preload/index.dart';
+import 'package:stative_app/routes/index.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,13 +28,13 @@ class Stative extends StatelessWidget {
               primarySwatch: Colors.blue,
               primaryColor: const Color.fromRGBO(255, 0, 0, 1)
           ),
-          initialRoute: 'preload',
+          initialRoute: Routes.preload,
           routes: {
-            'preload': (context) => const Preload(),
-            'auth': (context) => const Scaffold(body: SafeArea(child: Text('Auth screen'))),
-            'login': (context) => const SafeArea(child: Text('Login screen')),
-            'initialData': (context) => const SafeArea(child: Text('initialData screen')),
-            'home': (context) => const SafeArea(child: Text('Home screen')),
+            Routes.preload: (context) => const Preload(),
+            Routes.register: (context) => const Scaffold(body: SafeArea(child: Text('Register screen'))),
+            Routes.login: (context) => const SafeArea(child: Text('Login screen')),
+            Routes.initialData: (context) => const SafeArea(child: Text('initialData screen')),
+            Routes.home: (context) => const SafeArea(child: Text('Home screen')),
           },
         )
     );

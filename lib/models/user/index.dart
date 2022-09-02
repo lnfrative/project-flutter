@@ -5,10 +5,10 @@ class UserModel {
 
   final int id;
   final String email;
-  final String name;
+  final String? name;
   final int session;
-  final int height;
-  final int weight;
+  final int? height;
+  final int? weight;
 
 
   const UserModel({
@@ -30,5 +30,28 @@ class UserModel {
       height: userMap['height'],
       weight: userMap['weight'],
     )).toList();
+  }
+
+  static Future<UserModel?> getActiveSession(Database database) async {
+    final List<Map<String, dynamic>> userMaps = await database.query(
+      table,
+      where: 'session = ?',
+      whereArgs: [1],
+      limit: 1
+    );
+
+    if (userMaps.isEmpty) {
+      return null;
+    }
+
+    final Map<String, dynamic> userMap = userMaps[0];
+    return UserModel(
+        id: userMap['id'],
+        email: userMap['email'],
+        name: userMap['name'],
+        session: userMap['session'],
+        height: userMap['height'],
+        weight: userMap['weight']
+    );
   }
 }
