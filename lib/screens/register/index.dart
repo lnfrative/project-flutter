@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:stative_app/components/index.dart';
 import 'package:stative_app/store/index.dart';
 
 class RegisterModel {}
@@ -38,29 +39,15 @@ class RegisterState extends State<Register> {
             Expanded(
               flex: 1,
               child: Column(
-                children: [
-                  const Text('Email', style: TextStyle(
+                children: const [
+                  Text('Email', style: TextStyle(
                     fontSize: 20,
                   )),
                   Center(
                     child: SizedBox(
                       width: 350,
                       height: 40,
-                      child: TextField(
-                        textAlign: TextAlign.center,
-                        decoration: InputDecoration(
-                          contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 0),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                            borderSide: const BorderSide(
-                              width: 0,
-                              style: BorderStyle.none,
-                            ),
-                          ),
-                          filled: true,
-                          fillColor: Theme.of(context).shadowColor,
-                        )
-                      )
+                      child: Input()
                     )
                   )
                 ],
