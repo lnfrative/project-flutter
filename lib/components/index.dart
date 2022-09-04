@@ -1,3 +1,3 @@
-export 'input/index.dart';
+export 'Input/index.dart';
 export 'WrappedLogo/index.dart';
-export 'button/index.dart';
+export 'Button/index.dart';
