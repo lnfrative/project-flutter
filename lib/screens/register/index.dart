@@ -22,39 +22,20 @@ class RegisterState extends State<Register> {
   }
 
   Widget buildRegister(BuildContext context, RegisterModel model) {
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            Expanded(
-              flex: 1,
-              child: Center(
-                child: Image.asset(
-                  'images/icon.png',
-                  height: 150,
-                  width: 150,
-                ),
-              ),
-            ),
-            Expanded(
-              flex: 1,
-              child: Column(
-                children: const [
-                  Text('Email', style: TextStyle(
-                    fontSize: 20,
-                  )),
-                  Center(
-                    child: SizedBox(
-                      width: 350,
-                      height: 40,
-                      child: Input()
-                    )
-                  )
-                ],
+    return WrappedLogo(
+      child: Column(
+        children: const [
+          Text('Email', style: TextStyle(
+            fontSize: 20,
+          )),
+          Center(
+              child: SizedBox(
+                  width: 350,
+                  height: 40,
+                  child: Input()
               )
-            ),
-          ],
-        )
+          )
+        ],
       ),
     );
   }
