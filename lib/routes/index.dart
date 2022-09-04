@@ -4,4 +4,5 @@ class Routes {
   static const String register = 'register';
   static const String initialData = 'initialData';
   static const String login = 'login';
+  static const String auth = 'auth';
 }

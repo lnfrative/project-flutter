@@ -39,7 +39,7 @@ class PreloadState extends State<Preload> {
 
     Future.delayed(const Duration(milliseconds: 1000), () {
       if (user == null) {
-        Navigator.pushNamed(context, Routes.register);
+        Navigator.pushNamed(context, Routes.auth);
       } else {
         store.dispatch(SetSessionUser(user));
         if (user.weight == null && user.height == null) {
